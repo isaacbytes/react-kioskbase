@@ -4,7 +4,7 @@
   "description": "An experiment building a web-based kiosk user interface written in ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/isaacbytes/react-kioskbase/issues"
   },
-  "homepage": "https://github.com/isaacbytes/react-kioskbase#readme"
+  "homepage": "https://github.com/isaacbytes/react-kioskbase#readme",
+  "dependencies": {
+    "webpack": "^4.30.0"
+  }
 }
