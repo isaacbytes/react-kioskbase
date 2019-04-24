@@ -6,6 +6,7 @@
   "scripts": {
     "build:dev": "webpack --env developmemt --watch",
     "build:prod": "webpack --env production",
+    "dev-server": "webpack-dev-server",
     "test": "jest"
   },
   "repository": {
