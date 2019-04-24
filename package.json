@@ -4,7 +4,8 @@
   "description": "An experiment building a web-based kiosk user interface written in ReactJS",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --watch"
+    "build:dev": "webpack --env developmemt --watch",
+    "build:prod": "webpack --env production"
   },
   "repository": {
     "type": "git",
