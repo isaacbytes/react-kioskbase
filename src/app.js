@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template = <p>This is JSX</p>;
-ReactDOM.render(template, document.getElementsByTagName('body'));
+import HomeScreen from './components/HomeScreen';
+
+
+ReactDOM.render(<HomeScreen />, document.getElementById('myApp'));
