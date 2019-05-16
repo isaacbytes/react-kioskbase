@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import NavHeader from './NavHeader';
 
 export default class HomeScreen extends Component {
   render() {
@@ -8,8 +10,11 @@ export default class HomeScreen extends Component {
         of all our screen components.
 
         <p>First we have the navigation</p>
+        <NavHeader />
 
-        <div>Then we have the big content section</div><br/>
+
+        <div>Then we have the main content section</div>
+
 
         <div>Finally, we have a Widgets section where we will add other functionality.</div>
       </div>
