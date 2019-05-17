@@ -48,6 +48,10 @@ module.exports = function(env, arg) {
           exclude: /node_modules/
         },
         {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
           test: /\.scss$/,
           exclude: /\.module\.scss$/,
           use: ['style-loader', CSSLoader, postCSSLoader, 'sass-loader']
