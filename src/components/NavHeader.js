@@ -12,11 +12,11 @@ export default class NavHeader extends Component {
           <nav className={styles['header--nav']}>
 
             <div className={styles['header--nav__snapleft']}>
-              <li>Home</li>
+              <li><NavLink to="/">Home</NavLink></li>
             </div>
             
             <div className={styles['header--nav__snapright']}>
-              <li>Back</li>
+              <li><NavLink to="/back">Back</NavLink></li>
             </div>
 
           </nav>
