@@ -1,9 +1,12 @@
 // we are testing webpack support
+$headerheight: 3.2em;
+
+
 
 .header {
   background-color: rgba(0,0,0,0.8);
   color: white;
-  min-height: 50px; // temp value to prevent container collapse
+  min-height: $headerheight; // temp value to prevent container collapse
   position: fixed;
   top: 0;
   width: 100%;
