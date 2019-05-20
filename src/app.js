@@ -6,12 +6,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'normalize.css';
 import './styles/base.scss';
 import HomeScreen from './components/HomeScreen';
+import ErrorScreen from './components/ErrorScreen';
 
 
 // Routes
 const Router = (
   <Switch>
-    <Route path="/" component={HomeScreen} exact />
+    <Route exact path="/" component={HomeScreen} />
+    <Route component={ErrorScreen} />
   </Switch>
 );
 
