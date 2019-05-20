@@ -1,6 +1,27 @@
 // we are testing webpack support
 
-.navHeader {
+.header {
   background-color: rgba(0,0,0,0.8);
   color: white;
+  min-height: 50px; // temp value to prevent container collapse
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header--nav {
+  li {
+    list-style-type: none;
+  }
+}
+
+.header--nav__snapleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header--nav__snapright {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

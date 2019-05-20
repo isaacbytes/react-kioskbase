@@ -7,12 +7,17 @@ export default class NavHeader extends Component {
     return (
       <div>
         This is the NavHeader component.
-        <header className={styles.navHeader}>
-          <nav>
-            <ul>
+        <header className={styles.header}>
+          <nav className={styles['header--nav']}>
+
+            <div className={styles['header--nav__snapleft']}>
               <li>Home</li>
+            </div>
+            
+            <div className={styles['header--nav__snapright']}>
               <li>Back</li>
-            </ul>
+            </div>
+
           </nav>
         </header>
       </div>
