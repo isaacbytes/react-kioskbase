@@ -7,7 +7,6 @@ export default class NavHeader extends Component {
   render() {
     return (
       <div>
-        This is the NavHeader component.
         <header className={styles.header}>
           <nav className={styles['header--nav']}>
 
