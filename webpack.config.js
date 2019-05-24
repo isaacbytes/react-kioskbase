@@ -64,7 +64,13 @@ module.exports = function(env, arg) {
             postCSSLoader,
             'sass-loader',
           ]
-        }
+        },
+        {
+           test: /\.(png|svg|jpg|gif)$/,
+           use: [
+             'file-loader'
+           ]
+         }
       ]
     },
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
