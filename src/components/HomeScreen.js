@@ -7,6 +7,7 @@ import PageWidgets from './PageWidgets';
 
 export default class HomeScreen extends Component {
   render() {
+    
     return (
       <div>
         Welcome to the HomeScreen component. Here we will build out a prototype 
