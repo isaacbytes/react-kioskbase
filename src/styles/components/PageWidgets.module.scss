@@ -1,0 +1,11 @@
+// PageWidgets component styles
+$PageWidgetsPadding: 1rem;
+
+.page-widgets {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: $PageWidgetsPadding;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
