@@ -15,7 +15,7 @@ import ErrorScreen from './components/ErrorScreen';
 const RouteContainer = posed.div({
   enter: { 
     opacity: 1,
-    delay: 300,
+    delay: 1000,
     beforeChildren: true
   },
   exit: {
@@ -29,11 +29,11 @@ const renderThis = ({location}) => {
     <BackgroundWrap>
       <PoseGroup>
         <RouteContainer key={location.key} style={{height: '100%'}}>
-          <Switch location={location}>
-            <Route exact path="/" component={HomeScreen} key="home" />
+          <Switch>
+            <Route exact path="/" render={(props) => <HomeScreen {...props} />} />
 
             {/* Further routing handled inside ScreenContainer */}
-            <Route path="/" component={ScreenContainer} key="container" />
+            <Route path="/" render={(props) => <ScreenContainer {...props} />} />
           </Switch>
         </RouteContainer>
       </PoseGroup>

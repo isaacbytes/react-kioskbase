@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class LangSelectScreen extends Component {
@@ -6,6 +7,7 @@ class LangSelectScreen extends Component {
     return (
       <div>
         Hello, this is the LangSelectScreen Component.
+        <Link to="/notalink">This is a nonfunctioning link</Link>
       </div>
     )
   }
