@@ -16,6 +16,8 @@ const Router = (
   <BackgroundWrap>
     <Switch>
       <Route exact path="/" component={HomeScreen} />
+
+      {/* Further routing handled inside ScreenContainer */}
       <Route path="/" component={ScreenContainer} />
     </Switch>
   </BackgroundWrap>

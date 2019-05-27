@@ -3,15 +3,19 @@ import { Route, Switch } from 'react-router-dom';
 
 import NavHeader from './NavHeader';
 import PageWidgets from './PageWidgets';
-
 import LangSelectScreen from './LangSelectScreen';
 import ErrorScreen from './ErrorScreen';
+
+const styles = {
+  // header height offset: 3.2em (from component style)
+  paddingTop: '4em'
+};
 
 
 class ScreenContainer extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="screen-container" style={styles}>
         {/* Header */}
         <NavHeader />
 
@@ -23,7 +27,7 @@ class ScreenContainer extends Component {
 
         {/* Footer */}
         <PageWidgets />
-      </React.Fragment>    
+      </div>    
     )
   }
 }

@@ -7,9 +7,7 @@ export default class BackgroundWrap extends Component {
     const bgStyle = {
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover',
-      height: '100vh',
-      // header height (from component style): 3.2em
-      paddingTop: '4em'
+      height: '100vh'
     };
 
     return (
