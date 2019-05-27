@@ -7,7 +7,7 @@ import 'normalize.css';
 import './styles/base.scss';
 import BackgroundWrap from './components/BackgroundWrap.js'
 import HomeScreen from './components/HomeScreen';
-import LangSelectScreen from './components/LangSelectScreen';
+import ScreenContainer from './components/ScreenContainer';
 import ErrorScreen from './components/ErrorScreen';
 
 
@@ -16,8 +16,7 @@ const Router = (
   <BackgroundWrap>
     <Switch>
       <Route exact path="/" component={HomeScreen} />
-      <Route path="/lang" component={LangSelectScreen} />
-      <Route component={ErrorScreen} />
+      <Route path="/" component={ScreenContainer} />
     </Switch>
   </BackgroundWrap>
 );

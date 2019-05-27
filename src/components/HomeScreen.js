@@ -11,10 +11,7 @@ export default class HomeScreen extends Component {
     return (
       <div>
         <NavHeader />
-
         <div>Welcome to the Home Screen.</div>
-
-        <PageWidgets />
       </div>
     )
   }

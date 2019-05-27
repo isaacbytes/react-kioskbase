@@ -13,11 +13,11 @@ export default class NavHeader extends Component {
 
             <div className={styles['header--nav__snapleft']}>
               <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/lang" component={LangSelectScreen}>Language</NavLink></li>
+              <li><NavLink to="/lang">Language</NavLink></li>
             </div>
             
             <div className={styles['header--nav__snapright']}>
-              <li><NavLink to="/back">Back</NavLink></li>
+              <li><NavLink to="/" >Back</NavLink></li>
             </div>
 
           </nav>
