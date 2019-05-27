@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom';
 
+import LangSelectScreen from './LangSelectScreen';
 import styles from '../styles/components/NavHeader.module.scss';
 
 export default class NavHeader extends Component {
@@ -12,6 +13,7 @@ export default class NavHeader extends Component {
 
             <div className={styles['header--nav__snapleft']}>
               <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/lang" component={LangSelectScreen}>Language</NavLink></li>
             </div>
             
             <div className={styles['header--nav__snapright']}>
