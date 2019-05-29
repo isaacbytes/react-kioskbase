@@ -5,6 +5,14 @@ import {Link} from 'react-router-dom';
 import styles from '../styles/components/HomeScreen.module.scss';
 
 export default class HomeScreen extends Component {
+  componentDidMount() {
+    console.log('HomeScreen component mounted...');
+  }
+  
+  componentWillUnmount() {
+    console.log('HomeScreen component unmounting...');
+  }
+
   render() {
     
     return (

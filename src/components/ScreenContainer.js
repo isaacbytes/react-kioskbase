@@ -13,13 +13,13 @@ const styles = {
 };
 
 
-const RouteContainer = posed.div({
+const RoutesContainer = posed.div({
   enter: {
-    x: 0,
-    opacity: 1
+    opacity: 1,
+    delay: 500,
+    beforeChildren: true
   },
   exit: {
-    x: 50,
     opacity: 0
   }
 });
@@ -27,28 +27,29 @@ const RouteContainer = posed.div({
 
 class ScreenContainer extends Component {
   componentDidMount() {
-    console.log('Mounting ScreenContainer component!');
+    console.log('Mounted ScreenContainer component!');
   }
   componentWillUnmount() {
-    console.log('Unmounting ScreenContainer component!');
+    console.log('Unmounting ScreenContainer component...');
   }
 
+
   render() {
+
     return (
       <div className="screen-container" style={styles}>
         {/* Header */}
         <NavHeader />
 
         <PoseGroup>
-          {/* Screen */}
-          <RouteContainer key={this.props.location.key}>
-            <Switch>
-              <Route path="/lang" render={() => <LangSelectScreen />} />
-              <Route render={() => <ErrorScreen />} />
+          <RoutesContainer key={this.props.location.pathname}>
+            <Switch location={this.props.location}>
+              <Route path="/lang" component={LangSelectScreen} />
+              <Route component={ErrorScreen} />
             </Switch>
-          </RouteContainer>        
+          </RoutesContainer>
         </PoseGroup>
-
+            
         {/* Footer */}
         <PageWidgets />
       </div>    

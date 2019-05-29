@@ -5,6 +5,13 @@ import LangSelectScreen from './LangSelectScreen';
 import styles from '../styles/components/NavHeader.module.scss';
 
 export default class NavHeader extends Component {
+  componentDidMount() {
+    console.log('Mounted NavHeader component!');
+  }
+  componentWillUnmount() {
+    console.log('Unmounting NavHeader component...');
+  }
+
   render() {
     return (
       <div>

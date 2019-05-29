@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import background from '../images/bg.jpg';
 
 export default class BackgroundWrap extends Component {
-
+  componentDidMount() {
+    console.log('Mounted BackgroundWrap component!');
+  }
+  componentWillUnmount() {
+    console.log('Unmounting BackgroundWrap component...');
+  }
   render() {
     const bgStyle = {
       backgroundImage: `url(${background})`,

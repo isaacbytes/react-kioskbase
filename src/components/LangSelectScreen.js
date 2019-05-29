@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 
 class LangSelectScreen extends Component {
+  componentDidMount() {
+    console.log('Mounted LangSelectScreen component!');
+  }
+  componentWillUnmount() {
+    console.log('Unmounting LangSelectScreen component...');
+  }
+
   render() {
     return (
       <div>
