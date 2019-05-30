@@ -36,6 +36,9 @@ class ScreenContainer extends Component {
 
   render() {
 
+    console.log(this.props.location)
+
+
     return (
       <div className="screen-container" style={styles}>
         {/* Header */}

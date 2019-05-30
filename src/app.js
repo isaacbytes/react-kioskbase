@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import {Link} from 'react-router-dom';
 
 import 'normalize.css';
 import './styles/base.scss';
@@ -12,34 +11,44 @@ import HomeScreen from './components/HomeScreen';
 import ScreenContainer from './components/ScreenContainer';
 
 
+const RoutesContainer = posed.div({
+  enter: {
+    opacity: 1,
+    delay: 1000,
+    beforeChildren: true
+  },
+  exit: {
+    opacity: 0
+  }
+});
 
 
 
-
-
-
-
-const renderThis = ({location}) => {
-  console.log('here is the location object');
+const App = withRouter(({location}) => {
+  console.log('route change detected at root level');
   console.log(location);
+
   return (
     <BackgroundWrap>
-      <Switch>
-        <Route exact path="/" component={HomeScreen} />
-
-        {/* Further routing handled inside ScreenContainer */}
-        <Route path="/" component={ScreenContainer} />
-        
-      </Switch>
+      <PoseGroup>
+        <RoutesContainer key={location.pathname}>
+          <Switch location={location}>
+            <Route exact path="/" component={HomeScreen} />
+            {/* Further routing handled inside ScreenContainer */}
+            <Route path="/" component={ScreenContainer} />
+          </Switch>
+        </RoutesContainer>
+      </PoseGroup>
     </BackgroundWrap>
   );
-};
+});
+
+
 
 // Routes
 const Router = () => (
-  <Route render={renderThis} />
+  <Route component={App} />
 );
 
 
-
-ReactDOM.render(<BrowserRouter><Router /></BrowserRouter>, document.getElementById('myApp'));
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('myApp'));
