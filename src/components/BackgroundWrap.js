@@ -3,12 +3,17 @@ import background from '../images/bg.jpg';
 
 export default class BackgroundWrap extends Component {
   componentDidMount() {
-    console.log('Mounted BackgroundWrap component!');
+    console.log('BackgroundWrap: componentDidMount() called!');
   }
   componentWillUnmount() {
-    console.log('Unmounting BackgroundWrap component...');
+    console.log('BackgroundWrap: componentWillUnmount() called!');
+  }
+  componentDidUpdate(prevProps) {
+    console.log('BackgroundWrap: componentDidUpdate called! Rerendered.');
+    console.log(prevProps);
   }
   render() {
+    console.log('BackgroundWrap: render() called!  Component rendering!');
     const bgStyle = {
       backgroundImage: `url(${background})`,
       backgroundSize: 'cover',

@@ -6,13 +6,20 @@ import styles from '../styles/components/NavHeader.module.scss';
 
 export default class NavHeader extends Component {
   componentDidMount() {
-    console.log('Mounted NavHeader component!');
-  }
-  componentWillUnmount() {
-    console.log('Unmounting NavHeader component...');
+    console.log('NavHeader: componentDidMount() called!');
   }
 
+  componentWillUnmount() {
+    console.log('NavHeader: componentWillUnmount called!');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('NavHeader: componentDidUpdate called! Rerendered.');
+  }
+
+
   render() {
+    console.log('NavHeader: render() called!  Component rendering!');  
     return (
       <div>
         <header className={styles.header}>

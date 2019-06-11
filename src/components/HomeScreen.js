@@ -6,15 +6,20 @@ import styles from '../styles/components/HomeScreen.module.scss';
 
 export default class HomeScreen extends Component {
   componentDidMount() {
-    console.log('HomeScreen component mounted...');
-  }
-  
-  componentWillUnmount() {
-    console.log('HomeScreen component unmounting...');
+    console.log('HomeScreen: componentDidMount() called!');
   }
 
+  componentWillUnmount() {
+    console.log('HomeScreen: componentWillUnmount called!');
+  }
+
+  componentDidUpdate() {
+    console.log('HomeScreen: componentDidUpdate called! Rerendered.');
+  }
+
+
   render() {
-    
+    console.log('HomeScreen: render() called!  Component rendering!');  
     return (
       <div className={styles['welcome-container']}>
 

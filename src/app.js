@@ -9,6 +9,8 @@ import './styles/base.scss';
 import BackgroundWrap from './components/BackgroundWrap';
 import HomeScreen from './components/HomeScreen';
 import ScreenContainer from './components/ScreenContainer';
+import NavHeader from './components/NavHeader';
+
 
 
 const RoutesContainer = posed.div({
@@ -24,31 +26,65 @@ const RoutesContainer = posed.div({
 
 
 
-const App = withRouter(({location}) => {
-  console.log('route change detected at root level');
-  console.log(location);
 
-  return (
-    <BackgroundWrap>
-      <PoseGroup>
-        <RoutesContainer key={location.pathname}>
-          <Switch location={location}>
-            <Route exact path="/" component={HomeScreen} />
-            {/* Further routing handled inside ScreenContainer */}
-            <Route path="/" component={ScreenContainer} />
-          </Switch>
-        </RoutesContainer>
-      </PoseGroup>
-    </BackgroundWrap>
-  );
-});
+
+class App extends React.Component {
+  componentDidMount() {
+    console.log('Root App: componentDidMount() called!');
+  }
+
+  componentWillUnmount() {
+    console.log('Root App: componentWillUnmount called!');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Root App: componentDidUpdate called! Rerendered.');
+    console.log('Root App: Previous props:');
+    console.log(prevProps);
+
+    console.log('Root App: New props:');
+    console.log(this.props);
+  }
+
+
+  render () {
+    console.log('Root App: render() called! Root App component rendering!');
+
+    return (
+      <BackgroundWrap>
+        <PoseGroup pathname={this.props.location.pathname}>
+          
+          <RoutesContainer key="header">
+            <Route path="/" component={NavHeader} key="header" />
+          </RoutesContainer>
+            
+          <RoutesContainer key={this.props.location.pathname} >
+            <Switch location={this.props.location}>
+              <Route exact path="/" component={HomeScreen} key="welcome" />
+              {/* Further routing handled inside ScreenContainer */}
+              <Route path="/" component={ScreenContainer} key="screen-handler" />
+            </Switch>
+          </RoutesContainer>
+        </PoseGroup>
+      </BackgroundWrap>
+    );
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
 // Routes
-const Router = () => (
-  <Route component={App} />
-);
+const NewApp = withRouter(App);
 
-
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('myApp'));
+ReactDOM.render(<BrowserRouter><NewApp /></BrowserRouter>, document.getElementById('myApp'));

@@ -27,22 +27,26 @@ const RoutesContainer = posed.div({
 
 class ScreenContainer extends Component {
   componentDidMount() {
-    console.log('Mounted ScreenContainer component!');
+    console.log('ScreenContainer: componentDidMount() called!');
   }
+
   componentWillUnmount() {
-    console.log('Unmounting ScreenContainer component...');
+    console.log('ScreenContainer: componentWillUnmount called!');
+  }
+
+  componentDidUpdate() {
+    console.log('ScreenContainer: componentDidUpdate called! Rerendered.');
   }
 
 
   render() {
-
-    console.log(this.props.location)
+    console.log('ScreenContainer: render() called!  Component rendering!');  
 
 
     return (
       <div className="screen-container" style={styles}>
         {/* Header */}
-        <NavHeader />
+        {/* <NavHeader /> */}
 
         <PoseGroup>
           <RoutesContainer key={this.props.location.pathname}>
