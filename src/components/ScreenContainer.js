@@ -46,7 +46,7 @@ class ScreenContainer extends Component {
     return (
       <div className="screen-container" style={styles}>
         {/* Header */}
-        {/* <NavHeader /> */}
+        <NavHeader />
 
         <PoseGroup>
           <RoutesContainer key={this.props.location.pathname}>
@@ -58,7 +58,7 @@ class ScreenContainer extends Component {
         </PoseGroup>
             
         {/* Footer */}
-        <PageWidgets />
+        {/* <PageWidgets /> */}
       </div>    
     )
   }

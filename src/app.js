@@ -10,6 +10,8 @@ import BackgroundWrap from './components/BackgroundWrap';
 import HomeScreen from './components/HomeScreen';
 import ScreenContainer from './components/ScreenContainer';
 import NavHeader from './components/NavHeader';
+import PageWidgets from './components/PageWidgets';
+
 
 
 
@@ -24,13 +26,10 @@ const RoutesContainer = posed.div({
   }
 });
 
-
-
-
-
 class App extends React.Component {
+  
   componentDidMount() {
-    console.log('Root App: componentDidMount() called!');
+    console.log('Root App: componentDidMount() called!');    
   }
 
   componentWillUnmount() {
@@ -50,22 +49,18 @@ class App extends React.Component {
   render () {
     console.log('Root App: render() called! Root App component rendering!');
 
-    return (
+    return (      
       <BackgroundWrap>
-        <PoseGroup pathname={this.props.location.pathname}>
-          
-          <RoutesContainer key="header">
-            <Route path="/" component={NavHeader} key="header" />
-          </RoutesContainer>
-            
-          <RoutesContainer key={this.props.location.pathname} >
-            <Switch location={this.props.location}>
-              <Route exact path="/" component={HomeScreen} key="welcome" />
-              {/* Further routing handled inside ScreenContainer */}
-              <Route path="/" component={ScreenContainer} key="screen-handler" />
-            </Switch>
-          </RoutesContainer>
-        </PoseGroup>
+
+        <Switch location={this.props.location}>
+          <Route exact path="/" component={HomeScreen} key="welcome" />
+          {/* Further routing handled inside ScreenContainer */}
+          <Route path="/" component={ScreenContainer} key="screen-handler" />
+        </Switch>
+
+        <RoutesContainer key="footer">
+          <Route path="/" component={PageWidgets} key="footer" />
+        </RoutesContainer>
       </BackgroundWrap>
     );
   }
