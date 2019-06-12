@@ -58,7 +58,7 @@ class ScreenContainer extends Component {
         </PoseGroup>
             
         {/* Footer */}
-        {/* <PageWidgets /> */}
+        <PageWidgets />
       </div>    
     )
   }
