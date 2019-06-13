@@ -44,18 +44,21 @@ class ScreenContainer extends Component {
 
 
     return (
-      <div className="screen-container" style={styles}>
+      <div className="screen-container">
         {/* Header */}
         <NavHeader />
 
-        <PoseGroup>
-          <RoutesContainer key={this.props.location.pathname}>
-            <Switch location={this.props.location}>
-              <Route path="/lang" component={LangSelectScreen} />
-              <Route component={ErrorScreen} />
-            </Switch>
-          </RoutesContainer>
-        </PoseGroup>
+        {/* Screens */}
+        <div style={styles}>
+          <PoseGroup>
+            <RoutesContainer key={this.props.location.pathname}>
+              <Switch location={this.props.location}>
+                <Route path="/lang" component={LangSelectScreen} />
+                <Route component={ErrorScreen} />
+              </Switch>
+            </RoutesContainer>
+          </PoseGroup>
+        </div>
             
         {/* Footer */}
         <PageWidgets />

@@ -1,20 +1,14 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom';
 import posed from 'react-pose';
+import Animations from '../config/animations';
 
 
 import LangSelectScreen from './LangSelectScreen';
 import styles from '../styles/components/NavHeader.module.scss';
 
 
-const PoseWrap_AppHeader = posed.div({
-  hidden: {
-    x: '-100%'
-  },
-  shown: {
-    x: '0%'
-  }
-});
+const PoseWrap_AppHeader = posed.div(Animations.HeaderFooterConfig);
 
 
 export default class NavHeader extends Component {
@@ -29,7 +23,7 @@ export default class NavHeader extends Component {
     console.log('NavHeader: componentDidMount() called!');
     this.headerTimeoutId = setTimeout(() => {
       this.setState(() => ({ appHeaderVisibility: 'shown' }));
-    }, 1000);;
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -45,18 +39,18 @@ export default class NavHeader extends Component {
 
   render() {
     console.log('NavHeader: render() called!  Component rendering!');
-    
+
     return (
       <PoseWrap_AppHeader pose={this.state.appHeaderVisibility}>
         <header className={styles.header}>
           <nav className={styles['header--nav']}>
 
-            <div className={styles['header--nav__snapleft']}>
+            <div className={styles['header--nav__snap-left']}>
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/lang">Language</NavLink></li>
             </div>
             
-            <div className={styles['header--nav__snapright']}>
+            <div className={styles['header--nav__snap-right']}>
               <li><NavLink to="/" >Back</NavLink></li>
             </div>
 

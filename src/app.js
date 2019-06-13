@@ -51,16 +51,11 @@ class App extends React.Component {
 
     return (      
       <BackgroundWrap>
-
         <Switch location={this.props.location}>
           <Route exact path="/" component={HomeScreen} key="welcome" />
           {/* Further routing handled inside ScreenContainer */}
           <Route path="/" component={ScreenContainer} key="screen-handler" />
         </Switch>
-
-        <RoutesContainer key="footer">
-          <Route path="/" component={PageWidgets} key="footer" />
-        </RoutesContainer>
       </BackgroundWrap>
     );
   }
