@@ -25,13 +25,36 @@ const RoutesContainer = posed.div({
 });
 
 
+const ScreenElemContainer = posed.div({
+  onDisplay: {
+    opacity: 1,
+    delay: 500,
+    beforeChildren: true
+  },
+  preDisplay: {
+    opacity: 0
+  }
+});
+
+
 class ScreenContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ScreenElemState: 'preDisplay'
+    }
+  }
+
   componentDidMount() {
     console.log('ScreenContainer: componentDidMount() called!');
+    this.containerTimeoutID = setTimeout(() => {
+      this.setState(() => ({ ScreenElemState: 'onDisplay' }))
+    }, 1000);
   }
 
   componentWillUnmount() {
     console.log('ScreenContainer: componentWillUnmount called!');
+    clearTimeout(this.containerTimeoutID);
   }
 
   componentDidUpdate() {
@@ -49,16 +72,16 @@ class ScreenContainer extends Component {
         <NavHeader />
 
         {/* Screens */}
-        <div style={styles}>
+        <ScreenElemContainer style={styles}>
           <PoseGroup>
-            <RoutesContainer key={this.props.location.pathname}>
+            <RoutesContainer pose={this.state.ScreenElemState} key={this.props.location.pathname}>
               <Switch location={this.props.location}>
                 <Route path="/lang" component={LangSelectScreen} />
                 <Route component={ErrorScreen} />
               </Switch>
             </RoutesContainer>
           </PoseGroup>
-        </div>
+        </ScreenElemContainer>
             
         {/* Footer */}
         <PageWidgets />
@@ -66,6 +89,7 @@ class ScreenContainer extends Component {
     )
   }
 }
+
 
 
 export default ScreenContainer;
