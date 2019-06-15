@@ -72,7 +72,7 @@ class ScreenContainer extends Component {
         <NavHeader />
 
         {/* Screens */}
-        <ScreenElemContainer style={styles}>
+        <ScreenElemContainer style={styles} pose={this.state.ScreenElemState}>
           <PoseGroup>
             <RoutesContainer pose={this.state.ScreenElemState} key={this.props.location.pathname}>
               <Switch location={this.props.location}>
