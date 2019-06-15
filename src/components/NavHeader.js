@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import MaterialIcon, {colorPalette} from 'material-icons-react';
 import {NavLink} from 'react-router-dom';
 import posed from 'react-pose';
 import Animations from '../config/animations';
@@ -46,7 +47,7 @@ export default class NavHeader extends Component {
           <nav className={styles['header--nav']}>
 
             <div className={styles['header--nav__snap-left']}>
-              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/"><MaterialIcon icon="dashboard" /></NavLink></li>
               <li><NavLink to="/lang">Language</NavLink></li>
             </div>
             
