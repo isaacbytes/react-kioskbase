@@ -46,13 +46,35 @@ export default class NavHeader extends Component {
         <header className={styles.header}>
           <nav className={styles['header--nav']}>
 
+
+
+            {/* LEFT SECTION */}
             <div className={styles['header--nav__snap-left']}>
-              <li><NavLink to="/"><MaterialIcon icon="dashboard" /></NavLink></li>
-              <li><NavLink to="/lang">Language</NavLink></li>
+              <li>
+                <NavLink to="/">
+                  <MaterialIcon icon="home" size={30} invert />
+                </NavLink>
+              </li>
+
+              
+              <li>
+                <NavLink to="/" >
+                  <MaterialIcon icon="keyboard_backspace" size={30} invert />
+                </NavLink>
+              </li>
             </div>
             
+
+
+
+
+            {/* RIGHT SECTION  */}
             <div className={styles['header--nav__snap-right']}>
-              <li><NavLink to="/" >Back</NavLink></li>
+              <li>
+                <NavLink to="/lang">
+                  <MaterialIcon icon="g_translate" size={30} invert />
+                </NavLink>
+              </li>              
             </div>
 
           </nav>
