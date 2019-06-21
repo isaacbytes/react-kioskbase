@@ -18,6 +18,8 @@ export default class NavHeader extends Component {
     this.state = {
       appHeaderVisibility: 'hidden'
     };
+
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +38,10 @@ export default class NavHeader extends Component {
     console.log('NavHeader: componentDidUpdate called! Rerendered.');
   }
 
+  goBack() {
+    this.props.history.goBack();
+  }
+
 
 
   render() {
@@ -49,19 +55,20 @@ export default class NavHeader extends Component {
 
 
             {/* LEFT SECTION */}
-            <div className={styles['header--nav__snap-left']}>
-              <li>
-                <NavLink to="/">
-                  <MaterialIcon icon="home" size={30} invert />
-                </NavLink>
-              </li>
-
+            <div className={styles['header--nav__snap-left']}>          
               
-              <li>
-                <NavLink to="/" >
+              <a onClick={this.goBack}>                
+                <li>
                   <MaterialIcon icon="keyboard_backspace" size={30} invert />
-                </NavLink>
-              </li>
+                </li>
+              </a>
+
+              <NavLink to="/">
+                <li>
+                  <MaterialIcon icon="home" size={30} invert />
+                </li>
+              </NavLink>
+              
             </div>
             
 
@@ -70,11 +77,13 @@ export default class NavHeader extends Component {
 
             {/* RIGHT SECTION  */}
             <div className={styles['header--nav__snap-right']}>
-              <li>
-                <NavLink to="/lang">
+
+              <NavLink to="/lang">
+                <li>
                   <MaterialIcon icon="g_translate" size={30} invert />
-                </NavLink>
-              </li>              
+                </li>       
+              </NavLink>       
+
             </div>
 
           </nav>

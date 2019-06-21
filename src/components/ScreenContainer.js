@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import NavHeader from './NavHeader';
 import PageWidgets from './PageWidgets';
@@ -37,6 +37,10 @@ const ScreenElemContainer = posed.div({
 });
 
 
+// give the navbar access to ReactRouter History object
+const EnhancedNavHeader = withRouter(NavHeader);
+
+
 class ScreenContainer extends Component {
   constructor(props) {
     super(props);
@@ -63,13 +67,12 @@ class ScreenContainer extends Component {
 
 
   render() {
-    console.log('ScreenContainer: render() called!  Component rendering!');  
-
+    console.log('ScreenContainer: render() called!  Component rendering!');      
 
     return (
       <div className="screen-container">
         {/* Header */}
-        <NavHeader />
+        <EnhancedNavHeader />
 
         {/* Screens */}
         <ScreenElemContainer style={styles} pose={this.state.ScreenElemState}>
