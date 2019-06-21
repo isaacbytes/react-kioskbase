@@ -21,8 +21,37 @@ class LangSelectScreen extends Component {
     console.log('LangSelectScreen: render() called!  Component rendering!');  
     return (
       <div>
-        Hello, this is the LangSelectScreen Component.
-        <Link to="/notalink">This is a nonfunctioning link</Link>
+        <div className="lang-select-instructions">
+          Please select your language below.
+        </div>
+
+        <div className="lang-select-tiles">
+          <Link to="/home-en">
+            <div className="lang-select-tiles--single">
+              <span className="language">English</span>
+            </div>
+          </Link>
+
+          <Link to="/home-es">
+            <div className="lang-select-tiles--single">
+              <span className="language">Spanish</span>
+            </div>
+          </Link>
+
+          <Link to="/home-pl">
+            <div className="lang-select-tiles--single">
+              <span className="language">Polish</span>
+            </div>
+          </Link>
+
+          <Link to="/home-ko">
+            <div className="lang-select-tiles--single">
+            <span className="language">Korean</span>
+            </div>
+          </Link>
+        </div>
+
+
       </div>
     )
   }
