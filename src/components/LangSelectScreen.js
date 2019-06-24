@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import '../styles/components/LangSelectScreen.scss';
+
 
 class LangSelectScreen extends Component {
   componentDidMount() {
@@ -27,25 +29,25 @@ class LangSelectScreen extends Component {
 
         <div className="lang-select-tiles">
           <Link to="/home-en">
-            <div className="lang-select-tiles--single">
+            <div className="lang-select-tile">
               <span className="language">English</span>
             </div>
           </Link>
 
           <Link to="/home-es">
-            <div className="lang-select-tiles--single">
+            <div className="lang-select-tile">
               <span className="language">Spanish</span>
             </div>
           </Link>
 
           <Link to="/home-pl">
-            <div className="lang-select-tiles--single">
+            <div className="lang-select-tile">
               <span className="language">Polish</span>
             </div>
           </Link>
 
           <Link to="/home-ko">
-            <div className="lang-select-tiles--single">
+            <div className="lang-select-tile">
             <span className="language">Korean</span>
             </div>
           </Link>

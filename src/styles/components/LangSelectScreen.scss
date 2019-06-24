@@ -1,0 +1,23 @@
+
+
+.lang-select-tiles {
+  max-width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+}
+
+.lang-select-tile {
+  min-width: 10em;
+  background-color: rgba(0,0,0,0.5);
+  padding: 2em 1em;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+}
