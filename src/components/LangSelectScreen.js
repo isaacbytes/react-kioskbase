@@ -23,7 +23,7 @@ class LangSelectScreen extends Component {
     console.log('LangSelectScreen: render() called!  Component rendering!');  
     return (
       <div>
-        <div className="lang-select-instructions">
+        <div className="page-instructions page-instructions--lang-select">
           Please select your language below.
         </div>
 
