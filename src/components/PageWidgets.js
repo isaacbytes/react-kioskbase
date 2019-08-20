@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import posed from 'react-pose';
 import Animations from '../config/animations';
 
@@ -38,7 +39,11 @@ class PageWidgets extends Component {
     console.log('PageWidgets: render() called!  Component rendering!');  
     return (
       <PoseWrap_AppFooter className={PageWidgetStyles['page-widgets']} pose={this.state.visibility}>
-        Here we have the Widgets section.        
+        <FormattedMessage
+          id="PageWidgets.testMessage"
+          defaultMessage="Test footer widget intl"
+          description="A test message for the footer page widgets"
+        />        
       </PoseWrap_AppFooter>
     )
   }

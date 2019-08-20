@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 
 
 import 'normalize.css';
@@ -40,4 +41,4 @@ class App extends React.Component {
 // Inject Router
 const NewApp = withRouter(App);
 
-ReactDOM.render(<BrowserRouter><NewApp /></BrowserRouter>, document.getElementById('myApp'));
+ReactDOM.render(<IntlProvider locale="en-US"><BrowserRouter><NewApp /></BrowserRouter></IntlProvider>, document.getElementById('myApp'));
