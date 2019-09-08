@@ -1,0 +1,7 @@
+[
+  {
+    "id": "PageWidgets.testMessage",
+    "description": "A test message for the footer page widgets",
+    "defaultMessage": "Test footer widget intl"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "HomeScreen.welcome_text",
+    "description": "Greet the user",
+    "defaultMessage": "Hello intl!"
+  }
+]
