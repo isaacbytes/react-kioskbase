@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import '../styles/components/MainMenuScreen/MenuInfoPane.scss';
 
 
 
