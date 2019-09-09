@@ -4,7 +4,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import NavHeader from './NavHeader';
 import PageWidgets from './PageWidgets';
 import LangSelectScreen from './LangSelectScreen';
-import MainMenu from './MainMenu';
+import MainMenuScreen from './MainMenuScreen';
 import ErrorScreen from './ErrorScreen';
 import posed, { PoseGroup } from 'react-pose';
 
@@ -81,7 +81,7 @@ class ScreenContainer extends Component {
             <RoutesContainer pose={this.state.ScreenElemState} key={this.props.location.pathname}>
               <Switch location={this.props.location}>
                 <Route path="/lang" component={LangSelectScreen} />
-                <Route path="/main-menu" component={MainMenu} />
+                <Route path="/main-menu" component={MainMenuScreen} />
                 <Route component={ErrorScreen} />
               </Switch>
             </RoutesContainer>
