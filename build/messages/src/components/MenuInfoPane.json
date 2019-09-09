@@ -1,0 +1,12 @@
+[
+  {
+    "id": "MenuInfoPane.headerLabelPrimary",
+    "description": "Side pane header primary",
+    "defaultMessage": "Venue Name Primary"
+  },
+  {
+    "id": "MenuInfoPane.headerLabelSecondary",
+    "description": "Side pane header secondary",
+    "defaultMessage": "Venue Name Secondary"
+  }
+]
