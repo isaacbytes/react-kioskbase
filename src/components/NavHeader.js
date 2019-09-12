@@ -63,11 +63,11 @@ export default class NavHeader extends Component {
                 </li>
               </a>
 
-              <NavLink to="/">
+              {/* <NavLink to="/">
                 <li>
                   <MaterialIcon icon="home" size={30} invert />
                 </li>
-              </NavLink>
+              </NavLink> */}
               
             </div>
             
