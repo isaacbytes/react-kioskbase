@@ -30,14 +30,27 @@ export default class MenuInfoPane extends Component {
           </div>          
         </div>
 
-        <div className="pane__venue-section location">
-          111 Main Street
-          Sunnyside, NY 11104
+        <div className="pane__venue-section">
+          <div className="location">
+            111 Main Street
+            Sunnyside, NY 11104
+          </div>
+          
+          <div className="cta-btn">
+            <button>Get directions</button>
+          </div>
         </div>
 
 
-        <div className="pane__venue-section nextevent">
-          Next event: English Event, NY
+
+        <div className="pane__venue-section">
+          <div className="nextevent">
+            Next event: English Event, NY
+          </div>
+          
+          <div className="cta-btn">
+            <button>See Event Schedule</button>
+          </div>
         </div>
         
 
