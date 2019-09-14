@@ -30,6 +30,8 @@ export default class MenuInfoPane extends Component {
           </div>          
         </div>
 
+
+
         <div className="pane__venue-section">
           <div className="location">
             111 Main Street
