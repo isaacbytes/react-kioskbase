@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { NavLink } from 'react-router-dom';
 
 import '../styles/components/MainMenuScreen/MenuNav.scss';
 
@@ -17,14 +18,16 @@ export default class MenuNav extends Component {
           <div className="pane__menu-toc__sec">
             <div className="sec-label">About</div>
             <div className="sec-menu-items">
-              <div className="sec-menu-item history">
-                <div className="sec-menu-item__icon">[ICO]</div>
-                <div className="sec-menu-item__name">History</div>
-                <div className="sec-menu-item__preview">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <NavLink to="/history">
+                <div className="sec-menu-item history">
+                  <div className="sec-menu-item__icon">[ICO]</div>
+                  <div className="sec-menu-item__name">History</div>
+                  <div className="sec-menu-item__preview">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </div>
           </div>
 
@@ -32,23 +35,28 @@ export default class MenuNav extends Component {
           <div className="pane__menu-toc__sec">
             <div className="sec-label">Activities</div>
             <div className="sec-menu-items">
-              <div className="sec-menu-item activities">
-                <div className="sec-menu-item__icon">[ICO]</div>
-                <div className="sec-menu-item__name">Activities</div>
-                <div className="sec-menu-item__preview">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt.
+              <NavLink to="/education">
+                <div className="sec-menu-item education">
+                  <div className="sec-menu-item__icon">[ICO]</div>
+                  <div className="sec-menu-item__name">Education</div>
+                  <div className="sec-menu-item__preview">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt.
+                  </div>
                 </div>
-              </div>
+              </NavLink>
 
-              <div className="sec-menu-item maintenance">
-                <div className="sec-menu-item__icon">[ICO]</div>
-                <div className="sec-menu-item__name">Maintenance</div>
-                <div className="sec-menu-item__preview">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed.
+
+              <NavLink to="/maintenance">
+                <div className="sec-menu-item maintenance">
+                  <div className="sec-menu-item__icon">[ICO]</div>
+                  <div className="sec-menu-item__name">Maintenance</div>
+                  <div className="sec-menu-item__preview">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed.
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </div>                
           </div>
 
