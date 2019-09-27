@@ -1,36 +1,63 @@
 
 
 .MenuInfoPane {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.78);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30%;
-  height: 20%;
-  min-height: 200px;
-  max-width: 500px;
+  height: 100%;
   padding: 1em 2em;
-
-  position: absolute;
-  right: 0;
-  top: 20%;
+  border-right: 3px solid #464646;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 
 .pane__venue-title {
-  padding: 0.2em;
-  border-bottom: 1px solid #333;
+  padding: 1.1em;
   text-align: center;
-  margin-bottom: 0.2em;
+}
+
+.welcometxt {
+  text-align: center;
 }
 
 .pane__venue-section {
   padding: 0.2em 1em;
+
+
+
+  // split layout on ending container
+  &.end {
+    display: flex;
+
+    .label {
+      flex-grow: 1;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-decoration: underline;
+      color: #929292;
+    }
+    .nextevent {
+      flex-grow: 4;
+      text-align: right;
+      color: #929292;
+    }
+  }
+
+
+  // decreased default font size on start/end containers
+  &.end,
+  &.start {
+    font-size: 0.9em;
+  }
 }
 
 .pane__venue-title__jumbo {
-  font-size: 1.25em;
+  font-size: 2em;
+  padding: 0 3em;
 }
 .pane__venue-title__mini {
   font-size: 0.8em;

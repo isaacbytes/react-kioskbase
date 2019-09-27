@@ -8,9 +8,12 @@ import MainMenuScreen from './MainMenuScreen';
 import ErrorScreen from './ErrorScreen';
 import posed, { PoseGroup } from 'react-pose';
 
+import '../styles/components/ScreenContainer.scss';
+
+
 const styles = {
   // header height offset: 3.2em (from component style)
-  paddingTop: '4em'
+  paddingTop: '3.2em'
 };
 
 
