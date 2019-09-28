@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedTime } from 'react-intl';
 import posed from 'react-pose';
 import Animations from '../config/animations';
 
@@ -14,20 +14,34 @@ class PageWidgets extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibility: 'hidden'
+      visibility: 'hidden',
+      time: new Date()
     };
   }
 
   componentDidMount() {
     console.log('PageWidgets: componentDidMount() called!');
+
+    // visibility timer
     this.headerTimeoutId = setTimeout(() => {
       this.setState(() => ({ visibility: 'shown' }));
     }, 1000);
+
+    // start footer clock
+    this.timeClockId = setInterval(() => {
+      this.setState(() => ({ time: new Date() }));
+    }, 10000);
   }
+
 
   componentWillUnmount() {
     console.log('PageWidgets: componentWillUnmount called!');
+
+    // clear visiblity timer
     clearTimeout(this.headerTimeoutId);
+
+    // clear footer clock interval
+    clearInterval(this.timeClockId);
   }
 
   componentDidUpdate() {
@@ -39,11 +53,9 @@ class PageWidgets extends Component {
     console.log('PageWidgets: render() called!  Component rendering!');  
     return (
       <PoseWrap_AppFooter className={PageWidgetStyles['page-widgets']} pose={this.state.visibility}>
-        <FormattedMessage
-          id="PageWidgets.testMessage"
-          defaultMessage="Test footer widget intl"
-          description="A test message for the footer page widgets"
-        />        
+        <div className={PageWidgetStyles['footer__timeclock']}>
+          <FormattedTime value={new Date()} />
+        </div>        
       </PoseWrap_AppFooter>
     )
   }

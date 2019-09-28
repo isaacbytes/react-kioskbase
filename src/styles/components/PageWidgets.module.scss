@@ -4,8 +4,15 @@ $PageWidgetsPadding: 1rem;
 .page-widgets {
   background-color: rgba(0,0,0,0.8);
   color: white;
+  height: 3.2em;
   padding: $PageWidgetsPadding;
   position: fixed;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__timeclock {
+  font-size: 1.2em;
 }
