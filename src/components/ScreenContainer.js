@@ -9,6 +9,7 @@ import ErrorScreen from './ErrorScreen';
 import posed, { PoseGroup } from 'react-pose';
 
 import '../styles/components/ScreenContainer.scss';
+import MaintenanceMain from './pages/maintenance/MaintenanceMain';
 
 
 const styles = {
@@ -85,6 +86,7 @@ class ScreenContainer extends Component {
               <Switch location={this.props.location}>
                 <Route path="/lang" component={LangSelectScreen} />
                 <Route path="/main-menu" component={MainMenuScreen} />
+                <Route path="/maintenance" component={MaintenanceMain} />
                 <Route component={ErrorScreen} />
               </Switch>
             </RoutesContainer>
