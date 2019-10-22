@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 
 // top-level component container
 .MaintenanceMain {
@@ -8,11 +10,65 @@
 .depts-intro {
   display: flex;
   width: 100%;
+  max-width: 60em;
+  margin-left: auto;  
+  margin-right: auto;
 }
 
 .depts-intro__desc {
-  flex-grow: 2;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  padding: 1em;
 }
 .depts-intro__pic {
-  flex-grow: 2;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.depts {
+  margin-top: 2em;
+}
+.depts-preview-header {
+  text-transform: uppercase;
+  
+}
+.depts-preview {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 1em 0em;
+}
+.depts-single {
+  background-color: red;
+  height: 2.2em;
+  padding: 0.75em;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-right: 0.75em;
+
+  &:last-of-type {
+    margin-right: 0em;
+  }
+}
+
+
+.join-us {
+  max-width: 32em;
+  margin-top: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em 0.75em;
+  border: 1px solid green;
+}
+
+.join-us__header {
+  text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 0.75em;
 }
