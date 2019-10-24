@@ -8,7 +8,7 @@ import '../styles/components/MainMenuScreen/MainMenuScreen.scss';
 export default class MainMenu extends Component {
   render() {
     return (
-      <div class="MainMenu">
+      <div className="MainMenu">
         <MenuNav />
         <MenuInfoPane />
       </div>
